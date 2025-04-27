@@ -1,6 +1,11 @@
 const tabsContainer = document.getElementById("tabs");
-    const projectsContainer = document.getElementById("projects");
+const projectsContainer = document.getElementById("projects");
+const projectTitle = document.getElementById("project-title")
 
+
+projectTitle.textContent = "Web Projects"
+
+function arrangeData(projectData) {
     const allTechs = [
       ...new Set(projectData.flatMap(p => p.technologiesUsed))
     ];
@@ -28,7 +33,7 @@ const tabsContainer = document.getElementById("tabs");
           <h3>${project.projectName}</h3>
           <p>${project.description}</p>
           <p style="margin-bottom:16px;margin-top:16px;"><strong>Tech:</strong> ${project.technologiesUsed.join(", ")}</p>
-          <a href="${project.projectUrl}" target="_blank">Visit Project</a>
+          <a href="${project.projectUrl}" target="_blank">Visit Link</a>
         `;
         projectsContainer.appendChild(card);
       });
@@ -36,4 +41,22 @@ const tabsContainer = document.getElementById("tabs");
 
     renderProjects(projectData);
 
+  }
     
+    function DisplayOtherSections() {
+      console.log("Hiding Full Stack sections");
+      tabsContainer.innerHTML = ""
+      projectTitle.textContent = "Other Technical Competencies"
+
+      arrangeData(otherProjectData);
+    }
+    
+    function DisplayFullSections() {
+      console.log("Displayed Full Stack sections");
+      tabsContainer.innerHTML = ""
+      projectTitle.textContent = "Web Projects"
+
+      arrangeData(fullStackprojectData);
+    }
+
+arrangeData(fullStackprojectData);

@@ -1,4 +1,4 @@
-const projectData = [
+const fullStackprojectData = [
     {
       projectName: "History Delete page",
       projectUrl: "https://sangareact3.ccbp.tech",
@@ -35,7 +35,7 @@ const projectData = [
     },
     {
       projectName: "Spotify Song Downloader with Rapid API Integration Website",
-      projectUrl: "https://example.com/portfolio",
+      projectUrl: "https://sangathamizhan7.ccbp.tech",
       technologiesUsed: ["HTML", "CSS", "JavaScript","API"],
       description: "A web-based Spotify Song Downloader built using HTML, CSS, and JavaScript, integrated with the Rapid API platform. This project demonstrates fetching music data through a demo-purchased API, allowing users to search and access song details dynamically."
     },{
@@ -94,4 +94,11 @@ const projectData = [
       technologiesUsed:["HTML","CSS" , "JavaScript"],
       description: "TaskMaster is a simple to-do list app built with  localStorage to save tasks between sessions, showcasing DOM manipulation, event handling, and persistent data storage."
     },
+    {
+      projectName: "Rock paper Scissors Vs Computer",
+      projectUrl: "https://rockpapersciappr-fkgdiagrxtmtaxzsrqeqsa.streamlit.app/",
+      technologiesUsed:["Python","Streamlit"],
+      description: "A simple rock-paper-scissors game built using Python with simple logic & streamlit library to create a web app interface." 
+    },
   ];
+

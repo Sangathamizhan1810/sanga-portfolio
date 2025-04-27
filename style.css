@@ -59,7 +59,7 @@
   #tabs button {
     padding: 10px 20px;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     background: #00aaff;
     color: white;
     cursor: pointer;
@@ -68,6 +68,42 @@
 
   #tabs button:hover {
     background: #005f88;
+  }
+
+  #switch-tab {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  #switch-tab button {
+    
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 5px solid #8e44ad;  
+    color: #2c2c2c;
+    background-color: #fffaf5;        
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-bottom-color 0.3s ease;
+  }
+  
+  #switch-tab button:hover {
+    border-bottom: 5px solid #f39c12;  
+    background-color: #fff1d6;         
+    color: #5c3d00;                    
+    font-family: 'Playfair Display', serif;
+  }
+
+  #project-title {
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 16px;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  background-color: #222;
+  color: white;
+  border-radius: 10px;
   }
 
   #projects {
@@ -84,6 +120,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   }
 
   .project-card h3 {
