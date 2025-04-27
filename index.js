@@ -2,7 +2,6 @@ const tabsContainer = document.getElementById("tabs");
 const projectsContainer = document.getElementById("projects");
 const projectTitle = document.getElementById("project-title")
 
-
 projectTitle.textContent = "Web Projects"
 
 function arrangeData(projectData) {

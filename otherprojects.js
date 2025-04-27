@@ -17,4 +17,5 @@ const otherProjectData= [
       technologiesUsed: ["Internship"],
       description: "Web development Internship at codexintern, where i learned about web development and its various aspects, including HTML, CSS, JavaScript, and responsive design principles. I also gained hands-on experience in creating user-friendly interfaces and optimizing website performance."
   } ,  
+  
 ]
