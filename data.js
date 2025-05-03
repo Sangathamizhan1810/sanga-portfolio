@@ -1,5 +1,29 @@
 const fullStackprojectData = [
-    {
+  {
+    projectName: "Netflix Responsive  Landing Page Clone",
+    projectUrl: "https://sangathamizhan5.ccbp.tech",
+    technologiesUsed: ["HTML", "CSS"],
+    description: " A fully responsive front-end clone of the Netflix landing page, created using only HTML and CSS. This project mirrors the layout and design aesthetics of the original site, adapting smoothly across various screen sizes without any JavaScript involved."
+  },
+  {
+    projectName: "Spotify Song Downloader with Rapid API Integration Website",
+    projectUrl: "https://sangathamizhan7.ccbp.tech",
+    technologiesUsed: ["HTML", "CSS", "JavaScript","API"],
+    description: "A web-based Spotify Song Downloader built using HTML, CSS, and JavaScript, integrated with the Rapid API platform. This project demonstrates fetching music data through a demo-purchased API, allowing users to search and access song details dynamically."
+  },
+  {
+    projectName: "Multi-Page Game Store Website",
+    projectUrl: "https://sangathamizhan4.ccbp.tech",
+    technologiesUsed: ["HTML", "CSS"],
+    description: " A visually engaging game store website built using HTML and CSS, featuring multiple pages like home, product listings, and game details. Designed with responsive layouts and clean navigation to simulate a real-world digital storefront experience."
+  },
+  {
+    projectName: "Wikipedia Clone with Fetch API Integration",
+    projectUrl: "https://sangathamizhan1.ccbp.tech",
+    technologiesUsed: ["HTML", "CSS","JavaScript","API"],
+    description: " A functional Wikipedia clone built using HTML, CSS, and JavaScript, leveraging the fetch() method with a GET request to retrieve article data dynamically from the Wikipedia API. This project demonstrates real-time content rendering based on user search input, offering a simplified yet powerful search experience."
+  },  
+  {
       projectName: "History Delete page",
       projectUrl: "https://sangareact3.ccbp.tech",
       technologiesUsed: ["HTML", "CSS", "JavaScript","React"],
@@ -34,32 +58,10 @@ const fullStackprojectData = [
       description: "A preset Todo application created using JSX and CSS, where a predefined list of tasks is displayed. Users can remove individual tasks using the functional delete icon, while other actions are visually present but inactive."
     },
     {
-      projectName: "Spotify Song Downloader with Rapid API Integration Website",
-      projectUrl: "https://sangathamizhan7.ccbp.tech",
-      technologiesUsed: ["HTML", "CSS", "JavaScript","API"],
-      description: "A web-based Spotify Song Downloader built using HTML, CSS, and JavaScript, integrated with the Rapid API platform. This project demonstrates fetching music data through a demo-purchased API, allowing users to search and access song details dynamically."
-    },{
-      projectName: "Netflix Responsive  Landing Page Clone",
-      projectUrl: "https://sangathamizhan5.ccbp.tech",
-      technologiesUsed: ["HTML", "CSS"],
-      description: " A fully responsive front-end clone of the Netflix landing page, created using only HTML and CSS. This project mirrors the layout and design aesthetics of the original site, adapting smoothly across various screen sizes without any JavaScript involved."
-    },
-    {
       projectName: "API Status Viewer using Gorest API",
       projectUrl: "https://sangathamizhan3.ccbp.tech",
       technologiesUsed: ["HTML", "CSS","JavaScript","API"],
       description: "A front-end tool built to visually monitor API response status by integrating with the Gorest API. Developed using clean UI logic, it dynamically reflects API responses, helping users understand whether the service is active, responsive, or facing issues."
-    },{
-      projectName: "Multi-Page Game Store Website",
-      projectUrl: "https://sangathamizhan4.ccbp.tech",
-      technologiesUsed: ["HTML", "CSS"],
-      description: " A visually engaging game store website built using HTML and CSS, featuring multiple pages like home, product listings, and game details. Designed with responsive layouts and clean navigation to simulate a real-world digital storefront experience."
-    },
-    {
-      projectName: "Wikipedia Clone with Fetch API Integration",
-      projectUrl: "https://sangathamizhan1.ccbp.tech",
-      technologiesUsed: ["HTML", "CSS","JavaScript","API"],
-      description: " A functional Wikipedia clone built using HTML, CSS, and JavaScript, leveraging the fetch() method with a GET request to retrieve article data dynamically from the Wikipedia API. This project demonstrates real-time content rendering based on user search input, offering a simplified yet powerful search experience."
     },{
       projectName: "Basic Chatbot with Preset Responses",
       projectUrl: "https://sangachatbot.ccbp.tech/",
