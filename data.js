@@ -102,6 +102,5 @@ const fullStackprojectData = [
       technologiesUsed:["Python","Streamlit"],
       description: "A simple rock-paper-scissors game built using Python with simple logic & streamlit library to create a web app interface." 
     },
-    
   ];
 

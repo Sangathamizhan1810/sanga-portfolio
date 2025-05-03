@@ -1,11 +1,5 @@
 const otherProjectData= [
-  {
-    projectName: "Internship at CodexIntern",
-    projectUrl: "https://drive.google.com/file/d/1IotxtvfkV7SfwN3j1zqEwMxhvs-FWmoN/view?usp=sharing",
-    technologiesUsed: ["Internship"],
-    description: "Web development Internship at codexintern, where i learned about web development and its various aspects, including HTML, CSS, JavaScript, and responsive design principles. I also gained hands-on experience in creating user-friendly interfaces and optimizing website performance."
-} ,    
-  {
+      {
         projectName: "Advanced Excel certification",
         projectUrl: "https://www.linkedin.com/in/sanga-thamizhan-s-07b133218/details/certifications/1739726180522/single-media-viewer/?profileId=ACoAADbWE58BmX7eNE59A5FxiH44NQ3iLSzx8iA",
         technologiesUsed: ["Excel"],
@@ -19,4 +13,19 @@ const otherProjectData= [
     } ,
     
   
+]
+
+const internProjects = [
+  {
+    projectName: "CodexIntern",
+    projectUrl: "https://drive.google.com/file/d/1IotxtvfkV7SfwN3j1zqEwMxhvs-FWmoN/view?usp=sharing",
+    technologiesUsed: ["Web Development"],
+    description: "Web development Internship at codexintern, where i learned about web development and its various aspects, including HTML, CSS, JavaScript, and responsive design principles. I also gained hands-on experience in creating user-friendly interfaces and optimizing website performance."
+} ,
+{
+  projectName: "CodexIntern",
+  projectUrl: "https://drive.google.com/file/d/103I-OxVaehBpo0CqdIrcraRtMqW6ajIy/view?usp=sharing",
+  technologiesUsed: ["Backend Development"],
+  description: "Completed a one-month remote, unpaid internship as a Python Developer, gaining hands-on experience in real-world backend development and collaborative coding."
+} ,
 ]

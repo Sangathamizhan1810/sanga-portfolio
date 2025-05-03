@@ -58,4 +58,14 @@ function arrangeData(projectData) {
       arrangeData(fullStackprojectData);
     }
 
+    function DisplayInternship() {
+      console.log("Displayed Full Stack sections");
+      tabsContainer.innerHTML = ""
+      projectTitle.textContent = "Internship"
+
+      arrangeData(internProjects);
+    }
+
+    
+
 arrangeData(fullStackprojectData);

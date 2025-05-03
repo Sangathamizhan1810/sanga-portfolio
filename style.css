@@ -141,6 +141,13 @@
     color: white;
     padding: 8px 16px;
     border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .project-card a:hover {
+    background: #005f88;
+    color: white;
   }
 
   #resume {
