@@ -1,4 +1,8 @@
-Use this link to view the project : "https://sanga-portfolio.vercel.app/"
+Use this link to view the project : 
+latest updated - "https://sangathamizhan1810.github.io/sanga-portfolio/"       
+or  
+initial code -  "https://sanga-portfolio.vercel.app/"
+
 
 or else , 
 
