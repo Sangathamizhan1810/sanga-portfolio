@@ -20,8 +20,8 @@ const internProjects = [
     projectName: "CodexIntern",
     projectUrl: "https://drive.google.com/file/d/1IotxtvfkV7SfwN3j1zqEwMxhvs-FWmoN/view?usp=sharing",
     technologiesUsed: ["Web Development"],
-    description: "Web development Internship at codexintern, where i learned about web development and its various aspects, including HTML, CSS, JavaScript, and responsive design principles. I also gained hands-on experience in creating user-friendly interfaces and optimizing website performance."
-} ,
+    description: "Web development Internship at codexintern, where i learned about web development and its various aspects, including HTML, CSS, JavaScript, and responsive design principles. I also gained hands-on experience in creating user-friendly interfaces and optimizing website performance." 
+  } ,
 {
   projectName: "CodexIntern",
   projectUrl: "https://drive.google.com/file/d/103I-OxVaehBpo0CqdIrcraRtMqW6ajIy/view?usp=sharing",

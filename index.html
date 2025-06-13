@@ -5,71 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>My Portfolio</title>
 </head>
 <body>
   <header>
-
     <img src="https://avatars.githubusercontent.com/u/192378545?s=400&u=194ca87eeaf86890e9d4736c9d09e2ec7771ffc2&v=4" alt="My Photo" class="profile-pic" />
     <div>
-    <h1>Sangathamizhan S</h1>
-    <p>CCBP 4.0 | FULL-STACK DEVELOPER | Scalable Web Apps | Interactive UI/UX | API Development | Performance Optimization | End-to-End Web Solutions</p>
+      <h1>Sangathamizhan S</h1>
+      <p> FULL-STACK DEVELOPER | CCBP 4.0 | Scalable Web Apps | Interactive UI/UX | API Development | Performance Optimization | End-to-End Web Solutions</p>
+      <button id="theme-toggle">Toggle Theme</button>
     </div>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-  
     <div class="about-box" id="intro">
       <h3>Who I Am</h3>
-      <p>
-        I’m a motivated full stack developer and recent graduate, stepping into the tech industry with strong foundational skills and a drive to learn. Though I’m a fresher professionally, my hands-on project experience and internship have prepared me to contribute from day one. I bring a blend of technical ability, discipline from my commerce background, and a passion for building meaningful digital solutions.
-      </p>
+      <p>Aspiring Full Stack Developer with a strong foundation in front-end and back-end technologies, actively seeking opportunities to start a meaningful tech career. Passionate about building real-world applications, eager to learn, collaborate, and grow in a dynamic development environment.</p>
     </div>
-  
     <div class="about-box" id="journey">
-      <h3>My Journey </h3>
-      <p>
-        Coming from a computer applications and commerce background, I pursued my B.Com (General) while simultaneously diving into full stack development. Over the past two years, I’ve been dedicated to mastering both my academics and the art of building web applications—crafting responsive frontends and efficient backends. Along the way, I also completed a two-month internship, where I gained real-world experience working on development tasks in a collaborative team environment. With a strong foundation in logic, a drive to learn, and a deep interest in tech, I’m now ready to begin my career as a full stack developer and continue growing in this dynamic field.
-      </p>
+      <h3>My Journey</h3>
+      <p>My passion for technology took root early, during my high school years where I studied computer applications alongside commerce. Driven by curiosity and a love for problem-solving, I began teaching myself to code and gradually built a strong foundation in full stack development. While pursuing my academic path in a broader field, I kept my focus firmly on tech—learning, building, and refining my skills behind the scenes. Now, as I continue to master full stack development and pursue an MCA (correspondence), I’m fully committed to growing in the tech industry and turning this lifelong interest into a thriving career.</p>
     </div>
-  
     <div class="about-box" id="skills">
       <h3>My Skills & Certifications</h3>
-      <p>
-        I’m certified in HTML, CSS, JavaScript, Bootstrap, Python, Node.js, Express, SQL, Excel and PowerBI. Currently mastering React.js, and DSA. My focus is on full-stack development with clean code, strong fundamentals, and continuous learning.
-      </p>
-      <p>Please <a href="#footer">Click here</a> and visit my linkedIn profile</p>
+      <p>Please <a href="#footer">Click here</a> and visit my LinkedIn profile</p>
     </div>
   </section>
 
   <section id="switch-tab">
-  <button onclick="DisplayFullSections()">Full Stack Skills</button>  
-  <button onclick="DisplayInternship()">Internship</button>  
-  <button onclick="DisplayOtherSections()">Other Technical Skills</button> 
+    <button onclick="DisplayFullSections()">Full Stack Skills</button>
+    <button onclick="DisplayInternship()">Internship</button>
+    <button onclick="DisplayOtherSections()">Other Technical Skills</button>
   </section>
 
   <h1 id="project-title"></h1>
-  
-  <section id="tabs">
-  </section>
-
-  <section id="projects" >
-  </section>
-
+  <section id="tabs"></section>
+  <section id="projects"></section>
 
   <section id="resume">
     <h2>Download My Resume</h2>
-    <a href="https://drive.google.com/file/d/1YlZCgF08x1RewaCiMJUu-qI3v8R_DubF/view?usp=sharing" download class="download-btn">Download PDF</a>
+    <a href="https://drive.google.com/file/d/1YlZCgF08x1RewaCiMJUu-qI3v8R_DubF/view?usp=sharing" class="download-btn" download>Download PDF</a>
   </section>
 
   <footer id="footer">
     <div class="footer-content">
-      <a href="https://www.linkedin.com/in/sanga-thamizhan-s-07b133218?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="footer-icon">
+      <a href="https://www.linkedin.com/in/sanga-thamizhan-s-07b133218..." target="_blank" class="footer-icon">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sangathamizh07@gmail.com" target="_blank" class="footer-icon">
@@ -85,7 +67,7 @@
         <i class="fab fa-github"></i> Github
       </a>
     </div>
-    <p>Sangathamizhan S | CCBP 4.0 | FULL-STACK DEVELOPER | Scalable Web Apps | Interactive UI/UX | API Development | Performance Optimization | End-to-End Web Solutions</p>
+    <p>Sangathamizhan S | Aspiring FULL-STACK DEVELOPER </p>
   </footer>
 
   <script src="data.js"></script>

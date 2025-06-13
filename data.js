@@ -1,9 +1,36 @@
 const fullStackprojectData = [
   {
+    projectName: "E-commerce website",
+    projectUrl: "https://sangathamizh18.ccbp.tech",
+    technologiesUsed: ["HTML", "CSS","React","JavaScript","API"],
+    description: " A responsive online shopping interface with product listings, filters, and cart functionality. Developed using React for a seamless, modular shopping experience."
+  },{
+    projectName: "App Store",
+    projectUrl: "https://sangathamizh12.ccbp.tech",
+    technologiesUsed:["HTML", "CSS","React","JavaScript"],
+    description: " A front-end clone of an App Store showcasing apps with category filters and smooth UI. Built in React with reusable components and responsive design."
+  },
+  {
+    projectName: "Money Manager App",
+    projectUrl: "https://sangathamizh15.ccbp.tech",
+    technologiesUsed: ["HTML", "CSS","React","JavaScript"],
+    description: "A simple budgeting tool to add income, expenses, and track balance in real time. Built with React for dynamic updates and organized financial summaries."
+  },{
     projectName: "Netflix Responsive  Landing Page Clone",
     projectUrl: "https://sangathamizhan5.ccbp.tech",
-    technologiesUsed: ["HTML", "CSS"],
+    technologiesUsed: ["HTML", "CSS","React","JavaScript"],
     description: " A fully responsive front-end clone of the Netflix landing page, created using only HTML and CSS. This project mirrors the layout and design aesthetics of the original site, adapting smoothly across various screen sizes without any JavaScript involved."
+  },{
+    projectName: "Wikipedia Clone with Fetch API Integration",
+    projectUrl: "https://sangathamizhan1.ccbp.tech",
+    technologiesUsed: ["HTML", "CSS","JavaScript","API"],
+    description: " A functional Wikipedia clone built using HTML, CSS, and JavaScript, leveraging the fetch() method with a GET request to retrieve article data dynamically from the Wikipedia API. This project demonstrates real-time content rendering based on user search input, offering a simplified yet powerful search experience."
+  },  
+  {
+    projectName: "Google Search bar Clone",
+    projectUrl: "https://sangathamizhan9.ccbp.tech",
+    technologiesUsed: ["HTML", "CSS","React","JavaScript"],
+    description: "A sleek, responsive clone of Google’s search bar interface built using React. Mimics real-time input behavior with clean styling and a simple user experience."
   },
   {
     projectName: "Spotify Song Downloader with Rapid API Integration Website",
@@ -17,12 +44,7 @@ const fullStackprojectData = [
     technologiesUsed: ["HTML", "CSS"],
     description: " A visually engaging game store website built using HTML and CSS, featuring multiple pages like home, product listings, and game details. Designed with responsive layouts and clean navigation to simulate a real-world digital storefront experience."
   },
-  {
-    projectName: "Wikipedia Clone with Fetch API Integration",
-    projectUrl: "https://sangathamizhan1.ccbp.tech",
-    technologiesUsed: ["HTML", "CSS","JavaScript","API"],
-    description: " A functional Wikipedia clone built using HTML, CSS, and JavaScript, leveraging the fetch() method with a GET request to retrieve article data dynamically from the Wikipedia API. This project demonstrates real-time content rendering based on user search input, offering a simplified yet powerful search experience."
-  },  
+  
   {
       projectName: "History Delete page",
       projectUrl: "https://sangareact3.ccbp.tech",
@@ -34,7 +56,12 @@ const fullStackprojectData = [
       projectUrl: "https://sangareact5.ccbp.tech",
       technologiesUsed: ["HTML", "CSS", "JavaScript","React"],
       description: "A fun and interactive Emoji Game built using JSX with custom CSS styling, featuring multiple pages for smooth navigation and gameplay experience."
-    },
+    },{
+    projectName: "Coin toss game",
+    projectUrl: "https://sangathamizh13.ccbp.tech",
+    technologiesUsed: ["HTML", "CSS","React","JavaScript"],
+    description: " A fun, interactive coin toss simulator with real-time flipping animation and score tracking. Crafted with React to update results instantly on each toss."
+  },
     {
       projectName: "Live Clock with Toggle Button",
       projectUrl: "https://sangareact4.ccbp.tech",
@@ -103,4 +130,3 @@ const fullStackprojectData = [
       description: "A simple rock-paper-scissors game built using Python with simple logic & streamlit library to create a web app interface." 
     },
   ];
-

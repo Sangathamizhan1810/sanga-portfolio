@@ -27,11 +27,13 @@ function arrangeData(projectData) {
       projectsContainer.innerHTML = "";
       projects.forEach(project => {
         const card = document.createElement("div");
+        const isMustWatch = project.mustWatch === true
         card.className = "project-card";
         card.innerHTML = `
           <h3>${project.projectName}</h3>
           <p>${project.description}</p>
           <p style="margin-bottom:16px;margin-top:16px;"><strong>Tech:</strong> ${project.technologiesUsed.join(", ")}</p>
+          <p>${isMustWatch ? "Must Watch" : ""}</p>
           <a href="${project.projectUrl}" target="_blank">Visit Link</a>
         `;
         projectsContainer.appendChild(card);
@@ -69,3 +71,9 @@ function arrangeData(projectData) {
     
 
 arrangeData(fullStackprojectData);
+
+
+const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
