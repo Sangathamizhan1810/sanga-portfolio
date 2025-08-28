@@ -201,81 +201,6 @@ header {
   background: #218838;
 }
 
-footer {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #222;
-  color: white;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
-  max-width: 90vw;
-  transition: all 0.3s ease-in-out;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 15px 20px;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-
-.footer-icon {
-  font-size: 24px;
-  color: #333;
-  transition: transform 0.2s ease, color 0.2s ease;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-icon:hover {
-  color: #0077cc; /* Consistent hover color */
-  transform: scale(1.2);
-}
-
-.footer-icon i {
-  font-size: 1.5rem;
-}
-
-footer p {
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-  text-align: center;
-}
-
-/* Responsive for small screens */
-@media (max-width: 768px) {
-  .footer-content {
-    justify-content: center;
-    gap: 15px;
-    padding: 15px;
-  }
-  .footer-icon {
-    font-size: 22px;
-  }
-}
-
-/* Responsive for extra small screens */
-@media (max-width: 480px) {
-  .footer-icon {
-    font-size: 0.9rem;
-  }
-
-  footer p {
-    font-size: 0.7rem;
-  }
-}
-
 #theme-toggle {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
@@ -290,41 +215,38 @@ footer p {
 #theme-toggle:hover {
   background-color: #005f88;
 }
+
+
+
+/* Social icon row */
 .footer-content {
   display: flex;
-  justify-content: center;   /* keeps them centered */
+  justify-content: center;   /* center horizontally */
   align-items: center;
-  gap: 15px;
-  flex-wrap: nowrap;         /* ❌ no wrapping -> always row */
-  padding: 10px 15px;
-  background-color: #f8f9fa;
-  border-radius: 10px;
+  gap: 20px;                 /* spacing between icons */
+  flex-wrap: nowrap;         /* force single row */
+  padding: 10px 0;
   margin-top: 20px;
-  overflow-x: auto;          /* allows scroll if icons don’t fit */
+  overflow-x: auto;          /* allow side scroll on very small screens */
+  scrollbar-width: none;     /* hide scrollbar (Firefox) */
 }
-
-/* Smooth horizontal scroll on touch */
 .footer-content::-webkit-scrollbar {
-  display: none; /* hide scrollbar for clean look */
-}
-.footer-content {
-  -ms-overflow-style: none;  /* IE/Edge */
-  scrollbar-width: none;     /* Firefox */
+  display: none;             /* hide scrollbar (Chrome/Safari/Edge) */
 }
 
-/* Individual icons */
+/* Icon styles */
 .footer-icon {
-  font-size: 24px;
-  color: #333;
-  transition: transform 0.2s ease, color 0.2s ease;
+  font-size: 28px;
+  color: white;
   text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 40px;           /* ensures spacing in row */
+  min-width: 40px;           /* keeps consistent spacing */
 }
 
 .footer-icon:hover {
-  color: #0077cc;
+  color: black;
   transform: scale(1.2);
 }
