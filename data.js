@@ -1,7 +1,7 @@
 const fullStackprojectData = [
   {
     projectName: "E-commerce website",
-    projectUrl: "https://sangathamizh18.ccbp.tech",
+    projectUrl: "https://sangathamizh22.ccbp.tech",
     technologiesUsed: ["HTML", "CSS","React","JavaScript","API"],
     description: " A responsive online shopping interface with product listings, filters, and cart functionality. Developed using React for a seamless, modular shopping experience."
   },{
