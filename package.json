@@ -2,7 +2,7 @@
   "name": "sanga-portfolio-react",
   "version": "1.0.0",
   "description": "Sanga Portfolio - React Version",
-  "homepage": "https://Sangathamizhan1810.github.io/sanga-portfolio",
+  "homepage": "https://sangathamizhan1810.github.io/sanga-portfolio",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
