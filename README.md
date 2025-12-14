@@ -97,6 +97,33 @@ src/
 - **ProjectsGrid**: Grid layout for projects
 - **Resume**: Resume download section
 
+## Deployment
+
+This project is automatically deployed to GitHub Pages using GitHub Actions.
+
+### Live Demo
+
+🌐 **Live Site**: [https://Sangathamizhan1810.github.io/sanga-portfolio/](https://Sangathamizhan1810.github.io/sanga-portfolio/)
+
+### Automatic Deployment
+
+The project uses GitHub Actions to automatically build and deploy when you push to the `master` branch.
+
+**To enable GitHub Pages:**
+1. Go to your repository settings on GitHub
+2. Navigate to "Pages" in the left sidebar
+3. Under "Source", select "GitHub Actions"
+4. The workflow will automatically build and deploy your React app
+
+### Manual Deployment
+
+If you want to deploy manually:
+
+```bash
+npm run build
+# Then upload the build folder contents to your hosting service
+```
+
 ## Original Portfolio
 
-Original vanilla JavaScript version: [https://sangathamizhan1810.github.io/sanga-portfolio/](https://sangathamizhan1810.github.io/sanga-portfolio/)
+Original vanilla JavaScript version files are archived in the `archive/` folder.
