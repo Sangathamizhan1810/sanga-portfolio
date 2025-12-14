@@ -1,0 +1,132 @@
+#about {
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  transform: perspective(1000px) translateZ(0);
+  animation: slideInDown 0.8s ease-out;
+  color: var(--text-primary);
+}
+
+/* White color in light mode */
+body:not(.dark-mode) #about h2 {
+  color: white;
+  -webkit-text-fill-color: white;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) translateY(-30px) translateZ(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) translateY(0) translateZ(0);
+  }
+}
+
+.about-box {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: var(--transition);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary), var(--accent-primary));
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.about-box::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.about-box:hover::after {
+  opacity: 1;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.about-box:hover {
+  transform: perspective(1000px) rotateX(2deg) translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.about-box p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  position: relative;
+  z-index: 1;
+  text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #about h2 {
+    font-size: 2rem;
+  }
+  
+  .about-box {
+    padding: 30px 20px;
+  }
+  
+  .about-box p {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+

@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Portfolio Projects Database Schema",
+  "description": "Schema definition for portfolio projects database",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string" },
+        "lastUpdated": { "type": "string" },
+        "description": { "type": "string" },
+        "schemaVersion": { "type": "string" }
+      },
+      "required": ["version", "lastUpdated"]
+    },
+    "categories": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z]+$": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "string" },
+            "name": { "type": "string" },
+            "title": { "type": "string" },
+            "description": { "type": "string" },
+            "projects": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": { "type": "string" },
+                  "projectName": { "type": "string" },
+                  "projectUrl": { "type": "string", "format": "uri" },
+                  "technologiesUsed": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "description": { "type": "string" },
+                  "category": { "type": "string" },
+                  "type": { "type": "string" },
+                  "mustWatch": { "type": "boolean" }
+                },
+                "required": ["id", "projectName", "projectUrl", "technologiesUsed", "description"]
+              }
+            }
+          },
+          "required": ["id", "name", "title", "projects"]
+        }
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "properties": {
+        "totalProjects": { "type": "number" },
+        "fullStackProjects": { "type": "number" },
+        "internshipProjects": { "type": "number" },
+        "otherProjects": { "type": "number" },
+        "uniqueTechnologies": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+  "required": ["metadata", "categories", "statistics"]
+}
+
+
+
+
