@@ -34,14 +34,6 @@ const Header = ({ onThemeToggle }) => {
           FULL-STACK DEVELOPER | CCBP 4.0 | Scalable Web Apps | Interactive UI/UX | API Development | Performance Optimization | End-to-End Web Solutions
         </motion.p>
 
-        <motion.button
-          id="theme-toggle"
-          onClick={onThemeToggle}
-          whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(0,240,255)" }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Theme Settings
-        </motion.button>
 
         <motion.div
           className="footer-content"
