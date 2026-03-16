@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import Header from './components/Header';
 import FloatingHeader from './components/FloatingHeader';
+import Hero3D from './components/Hero3D';
 import About from './components/About';
 import ProjectTabs from './components/ProjectTabs';
 import TechnologyFilter from './components/TechnologyFilter';
@@ -82,6 +83,7 @@ function App() {
 
   return (
     <div className="App">
+      <Hero3D />
       <FloatingHeader onThemeToggle={handleThemeToggle} />
       <Header onThemeToggle={handleThemeToggle} />
       <About />

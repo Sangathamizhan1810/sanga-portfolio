@@ -35,8 +35,8 @@ const FloatingHeader = ({ onThemeToggle }) => {
       <div className="floating-header-content">
         <h3 className="floating-name">Sangathamizhan S</h3>
         <div className="floating-actions">
-          <button 
-            id="floating-theme-toggle" 
+          <button
+            id="floating-theme-toggle"
             onClick={onThemeToggle}
             className="floating-theme-btn"
             aria-label="Toggle theme"
@@ -46,13 +46,13 @@ const FloatingHeader = ({ onThemeToggle }) => {
           </button>
           <div className="floating-icons">
             <a href="https://www.linkedin.com/in/sanga-thamizhan-s-07b133218" target="_blank" rel="noopener noreferrer" className="floating-icon">
-              <i className="fab fa-linkedin"></i> 
+              <i className="fab fa-linkedin"></i>
             </a>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sangathamizh07@gmail.com" target="_blank" rel="noopener noreferrer" className="floating-icon">
-              <i className="fas fa-envelope"></i> 
+              <i className="fas fa-envelope"></i>
             </a>
             <a href="https://wa.me/917358519228" target="_blank" rel="noopener noreferrer" className="floating-icon">
-              <i className="fab fa-whatsapp"></i> 
+              <i className="fab fa-whatsapp"></i>
             </a>
             <a href="tel:+917358519228" className="floating-icon">
               <i className="fas fa-phone"></i>
