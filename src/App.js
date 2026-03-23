@@ -7,6 +7,7 @@ import ProjectTabs from './components/ProjectTabs';
 import TechnologyFilter from './components/TechnologyFilter';
 import ProjectsGrid from './components/ProjectsGrid';
 import Resume from './components/Resume';
+import Contact from './components/Contact';
 import { fullStackprojectData, otherProjectData, internProjects } from './data/projectsData';
 import './App.css';
 
@@ -96,6 +97,7 @@ function App() {
       />
       <ProjectsGrid projects={filteredProjects} />
       <Resume />
+      <Contact />
     </div>
   );
 }

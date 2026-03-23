@@ -5,6 +5,7 @@
   "homepage": "https://sangathamizhan1810.github.io/sanga-portfolio",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-three/drei": "^9.112.0",
     "@react-three/fiber": "^8.18.0",
     "framer-motion": "^12.37.0",

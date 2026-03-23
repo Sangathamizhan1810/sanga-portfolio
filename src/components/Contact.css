@@ -1,0 +1,229 @@
+/* ─── Contact Section ─── */
+#contact {
+  position: relative;
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 50px 40px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Shimmer top bar (matches About section) */
+.contact-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary), var(--accent-primary));
+  background-size: 200% 100%;
+  animation: contactShimmer 3s linear infinite;
+}
+
+@keyframes contactShimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* Heading */
+#contact h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Subtitle */
+.contact-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+/* ─── Form ─── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* Input group (icon + input) */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.input-group:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.15), inset 0 0 18px rgba(0, 240, 255, 0.03);
+}
+
+/* Icon */
+.input-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  min-height: 52px;
+  color: var(--accent-primary);
+  font-size: 1.05rem;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.input-group:focus-within .input-icon {
+  opacity: 1;
+}
+
+.textarea-icon {
+  align-self: flex-start;
+  padding-top: 16px;
+}
+
+/* Fields */
+.input-group input,
+.input-group textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 16px 16px 16px 0;
+  resize: none;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.input-group textarea {
+  min-height: 130px;
+}
+
+/* ─── Submit Button ─── */
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  align-self: center;
+  background: transparent;
+  border: 2px solid var(--accent-primary);
+  color: var(--accent-primary);
+  padding: 16px 48px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(255, 0, 60, 0.08));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.contact-btn:hover::before {
+  opacity: 1;
+}
+
+.contact-btn:hover {
+  color: #fff;
+  border-color: var(--accent-primary);
+}
+
+.contact-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading spinner */
+.btn-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(0, 240, 255, 0.3);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Toast ─── */
+.contact-toast {
+  margin-top: 24px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-toast.success {
+  background: rgba(0, 240, 140, 0.12);
+  border: 1px solid rgba(0, 240, 140, 0.3);
+  color: #00f08c;
+}
+
+.contact-toast.error {
+  background: rgba(255, 0, 60, 0.12);
+  border: 1px solid rgba(255, 0, 60, 0.3);
+  color: var(--accent-secondary);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  #contact {
+    margin: 50px auto;
+    padding: 40px 20px 30px;
+  }
+
+  #contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-btn {
+    padding: 14px 36px;
+    font-size: 1rem;
+  }
+}
