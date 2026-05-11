@@ -5,7 +5,7 @@ import './Resume.css';
 const Resume = () => {
   const resumeData = {
     title: 'Download My Resume',
-    downloadUrl: 'https://docs.google.com/document/d/1SfPcxTymkecKLBX9s2cCwOnvsyPbjb3y/edit?usp=drive_link&ouid=113973101089486846523&rtpof=true&sd=true'
+    downloadUrl: 'https://drive.google.com/file/d/1iaipv_3tp7eToYkUFS1sFjoIEuWy4GFI/view?usp=drive_link'
   };
 
   return (
