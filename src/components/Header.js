@@ -31,7 +31,7 @@ const Header = ({ onThemeToggle }) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          FULL-STACK DEVELOPER | CCBP 4.0 | Scalable Web Apps | Interactive UI/UX | API Development | Performance Optimization | End-to-End Web Solutions
+          Agentic AI DEVELOPER | CCBP 4.0 | Scalable Web Apps | Interactive UI/UX | API Development | Performance Optimization | End-to-End Web Solutions
         </motion.p>
 
 

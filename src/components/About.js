@@ -14,7 +14,7 @@ const About = () => {
     >
       <h2>About Me</h2>
       <div className="about-box" id="intro">
-        <p>Aspiring Full Stack Developer with a strong foundation in front-end and back-end technologies, actively seeking opportunities to start a meaningful tech career. Passionate about building real-world applications, eager to learn, collaborate, and grow in a dynamic development environment.</p>
+        <p>Agentic AI Developer focused on building AI-first software systems using LLMs, prompt engineering, and full-stack development. Experienced in multi-agent workflows, AI-assisted SDLC, and rapid product development using Claude AI, Cursor AI, React, Node.js, Python, and SQL. Passionate about solving real engineering problems with scalable AI solutions.</p>
       </div>
     </motion.section>
   );
