@@ -6,11 +6,16 @@ import './Contact.css';
 // Regex to validate full email structure including domain and TLD (e.g. user@domain.com)
 const EMAIL_DOMAIN_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+// Read environment variables or fallback to placeholders
+const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+
 const Contact = () => {
   const formRef = useRef();
   const [formData, setFormData] = useState({ user_name: '', user_email: '', message: '' });
   const [errors, setErrors] = useState({ user_name: '', user_email: '' });
-  const [status, setStatus] = useState(null); // 'sending' | 'success' | 'error' | 'validation_error'
+  const [status, setStatus] = useState(null); // 'sending' | 'success' | 'error' | 'validation_error' | 'unconfigured'
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -73,22 +78,42 @@ const Contact = () => {
       return;
     }
 
+    // Check if EmailJS keys are configured or still placeholders
+    const isConfigured =
+      SERVICE_ID !== 'YOUR_SERVICE_ID' &&
+      TEMPLATE_ID !== 'YOUR_TEMPLATE_ID' &&
+      PUBLIC_KEY !== 'YOUR_PUBLIC_KEY' &&
+      SERVICE_ID.trim() !== '' &&
+      TEMPLATE_ID.trim() !== '' &&
+      PUBLIC_KEY.trim() !== '';
+
+    if (!isConfigured) {
+      console.warn(
+        'EmailJS credentials are not configured yet. Set REACT_APP_EMAILJS_SERVICE_ID, REACT_APP_EMAILJS_TEMPLATE_ID, and REACT_APP_EMAILJS_PUBLIC_KEY in your .env file.'
+      );
+      
+      // Fallback: Open mailto link so user message is never lost
+      const mailtoSubject = encodeURIComponent(`Portfolio Message from ${formData.user_name}`);
+      const mailtoBody = encodeURIComponent(`Name: ${formData.user_name}\nEmail: ${formData.user_email}\n\nMessage:\n${formData.message}`);
+      window.location.href = `mailto:sangathamizh07@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+      
+      setStatus('unconfigured');
+      setTimeout(() => setStatus(null), 5000);
+      return;
+    }
+
     setStatus('sending');
     setErrors({ user_name: '', user_email: '' });
 
     emailjs
-      .sendForm(
-        'YOUR_SERVICE_ID',   // ← Replace with your EmailJS Service ID
-        'YOUR_TEMPLATE_ID',  // ← Replace with your EmailJS Template ID
-        formRef.current,
-        'YOUR_PUBLIC_KEY'    // ← Replace with your EmailJS Public Key
-      )
+      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
       .then(() => {
         setStatus('success');
         setFormData({ user_name: '', user_email: '', message: '' });
         setTimeout(() => setStatus(null), 4000);
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error('EmailJS Error:', err);
         setStatus('error');
         setTimeout(() => setStatus(null), 4000);
       });
@@ -175,7 +200,7 @@ const Contact = () => {
         </motion.div>
         {errors.user_email && <span className="field-error">{errors.user_email}</span>}
 
-        {/* Message Field (Can be anything as it is) */}
+        {/* Message Field */}
         <motion.div
           className="input-group"
           initial={{ opacity: 0, x: -30 }}
@@ -223,6 +248,17 @@ const Contact = () => {
 
       {/* Toast notifications */}
       <AnimatePresence>
+        {status === 'unconfigured' && (
+          <motion.div
+            className="contact-toast error"
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.9 }}
+            transition={{ duration: 0.4 }}
+          >
+            <i className="fas fa-envelope-open-text" /> Opening mail app to send email directly... (Configure EmailJS keys in .env)
+          </motion.div>
+        )}
         {status === 'validation_error' && (
           <motion.div
             className="contact-toast error"
@@ -253,7 +289,7 @@ const Contact = () => {
             exit={{ opacity: 0, y: -20, scale: 0.9 }}
             transition={{ duration: 0.4 }}
           >
-            <i className="fas fa-exclamation-triangle" /> Failed to send. Please try again.
+            <i className="fas fa-exclamation-triangle" /> EmailJS error: Check your Service ID, Template ID, and Public Key.
           </motion.div>
         )}
       </AnimatePresence>
