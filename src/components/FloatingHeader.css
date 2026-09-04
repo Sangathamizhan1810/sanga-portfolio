@@ -46,6 +46,24 @@
   color: var(--text-primary);
 }
 
+.floating-nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.floating-nav a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.floating-nav a:hover {
+  color: var(--accent-primary);
+}
+
 .floating-actions {
   display: flex;
   gap: 15px;
@@ -193,24 +211,31 @@
     font-size: 1.1rem;
   }
   
+  .floating-nav {
+    gap: 10px;
+  }
+
+  .floating-nav a {
+    font-size: 0.8rem;
+  }
+
   .floating-theme-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1.1rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
   }
   
   .floating-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.1rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
   }
   
   .floating-actions {
-    gap: 12px;
+    gap: 10px;
   }
   
   .floating-icons {
-    gap: 12px;
+    gap: 10px;
   }
 }
-

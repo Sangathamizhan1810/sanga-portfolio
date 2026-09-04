@@ -1,0 +1,8 @@
+# Robots.txt for Sangathamizhan S Portfolio
+# Allows all search engine crawlers to index the website
+
+User-agent: *
+Allow: /
+
+# Location of the XML sitemap for search engine discovery
+Sitemap: https://sangathamizhan1810.github.io/sanga-portfolio/sitemap.xml

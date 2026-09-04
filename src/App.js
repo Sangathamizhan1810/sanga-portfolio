@@ -8,6 +8,7 @@ import TechnologyFilter from './components/TechnologyFilter';
 import ProjectsGrid from './components/ProjectsGrid';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 import { fullStackprojectData, otherProjectData, internProjects } from './data/projectsData';
 import './App.css';
 
@@ -86,24 +87,30 @@ function App() {
     <div className="App">
       <Hero3D />
       <FloatingHeader onThemeToggle={handleThemeToggle} />
-      <Header onThemeToggle={handleThemeToggle} />
-      <About />
-      <ProjectTabs activeTab={activeTab} onTabChange={handleTabChange} />
-      <h1 id="project-title">{projectTitle}</h1>
-      <TechnologyFilter
-        technologies={allTechnologies}
-        onFilterChange={setSelectedTech}
-        selectedTech={selectedTech}
-      />
-      <ProjectsGrid projects={filteredProjects} />
-      <Resume />
-      <Contact />
+      
+      {/* Semantic Main Container for Technical SEO */}
+      <main id="main-content">
+        <Header onThemeToggle={handleThemeToggle} />
+        <About />
+        <ProjectTabs activeTab={activeTab} onTabChange={handleTabChange} />
+        
+        {/* H2 section title to maintain clean single H1 heading hierarchy */}
+        <h2 id="project-title">{projectTitle}</h2>
+        
+        <TechnologyFilter
+          technologies={allTechnologies}
+          onFilterChange={setSelectedTech}
+          selectedTech={selectedTech}
+        />
+        <ProjectsGrid projects={filteredProjects} />
+        <Resume />
+        <Contact />
+      </main>
+
+      {/* Semantic Footer */}
+      <Footer />
     </div>
   );
 }
 
 export default App;
-
-
-
-
