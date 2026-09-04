@@ -3,18 +3,78 @@ import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
 
+// Regex to validate full email structure including domain and TLD (e.g. user@domain.com)
+const EMAIL_DOMAIN_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 const Contact = () => {
   const formRef = useRef();
   const [formData, setFormData] = useState({ user_name: '', user_email: '', message: '' });
-  const [status, setStatus] = useState(null); // 'sending' | 'success' | 'error'
+  const [errors, setErrors] = useState({ user_name: '', user_email: '' });
+  const [status, setStatus] = useState(null); // 'sending' | 'success' | 'error' | 'validation_error'
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    if (name === 'user_name') {
+      // Allow ONLY alphabetic characters (a-z, A-Z) and spaces
+      const alphabetOnly = value.replace(/[^a-zA-Z\s]/g, '');
+      setFormData((prev) => ({ ...prev, [name]: alphabetOnly }));
+
+      if (value !== alphabetOnly) {
+        setErrors((prev) => ({ ...prev, user_name: 'Name can only contain alphabetic letters.' }));
+      } else {
+        setErrors((prev) => ({ ...prev, user_name: '' }));
+      }
+      return;
+    }
+
+    if (name === 'user_email') {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+      // Clear email error while typing if valid domain format
+      if (value === '' || EMAIL_DOMAIN_REGEX.test(value)) {
+        setErrors((prev) => ({ ...prev, user_email: '' }));
+      }
+      return;
+    }
+
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleEmailBlur = () => {
+    if (formData.user_email && !EMAIL_DOMAIN_REGEX.test(formData.user_email)) {
+      setErrors((prev) => ({
+        ...prev,
+        user_email: 'Please enter a valid email with a domain (e.g. user@domain.com).'
+      }));
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Final validation check before sending
+    let hasError = false;
+    const newErrors = { user_name: '', user_email: '' };
+
+    if (!formData.user_name.trim() || /[^a-zA-Z\s]/.test(formData.user_name)) {
+      newErrors.user_name = 'Name must only contain alphabetic letters.';
+      hasError = true;
+    }
+
+    if (!formData.user_email || !EMAIL_DOMAIN_REGEX.test(formData.user_email)) {
+      newErrors.user_email = 'Please enter a valid email address with a valid domain (e.g. user@domain.com).';
+      hasError = true;
+    }
+
+    if (hasError) {
+      setErrors(newErrors);
+      setStatus('validation_error');
+      setTimeout(() => setStatus(null), 4000);
+      return;
+    }
+
     setStatus('sending');
+    setErrors({ user_name: '', user_email: '' });
 
     emailjs
       .sendForm(
@@ -65,9 +125,10 @@ const Contact = () => {
         Have a project in mind or just want to say hello? Drop me a message!
       </motion.p>
 
-      <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
+      <form ref={formRef} onSubmit={handleSubmit} className="contact-form" noValidate>
+        {/* Name Field (Only Alphabet Typable) */}
         <motion.div
-          className="input-group"
+          className={`input-group ${errors.user_name ? 'invalid' : ''}`}
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -84,11 +145,15 @@ const Contact = () => {
             value={formData.user_name}
             onChange={handleChange}
             required
+            pattern="[a-zA-Z\s]+"
+            title="Only alphabetic letters and spaces allowed"
           />
         </motion.div>
+        {errors.user_name && <span className="field-error">{errors.user_name}</span>}
 
+        {/* Email Field (Domain Validation Check) */}
         <motion.div
-          className="input-group"
+          className={`input-group ${errors.user_email ? 'invalid' : ''}`}
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -101,13 +166,16 @@ const Contact = () => {
             type="email"
             name="user_email"
             id="contact-email"
-            placeholder="Your Email"
+            placeholder="Your Email (e.g. user@domain.com)"
             value={formData.user_email}
             onChange={handleChange}
+            onBlur={handleEmailBlur}
             required
           />
         </motion.div>
+        {errors.user_email && <span className="field-error">{errors.user_email}</span>}
 
+        {/* Message Field (Can be anything as it is) */}
         <motion.div
           className="input-group"
           initial={{ opacity: 0, x: -30 }}
@@ -153,8 +221,19 @@ const Contact = () => {
         </motion.button>
       </form>
 
-      {/* Toast notification */}
+      {/* Toast notifications */}
       <AnimatePresence>
+        {status === 'validation_error' && (
+          <motion.div
+            className="contact-toast error"
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.9 }}
+            transition={{ duration: 0.4 }}
+          >
+            <i className="fas fa-exclamation-circle" /> Please fix the highlighted errors before submitting.
+          </motion.div>
+        )}
         {status === 'success' && (
           <motion.div
             className="contact-toast success"

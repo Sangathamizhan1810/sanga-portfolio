@@ -207,6 +207,26 @@
   color: var(--accent-secondary);
 }
 
+/* Invalid state styling */
+.input-group.invalid {
+  border-color: rgba(255, 0, 60, 0.6);
+  box-shadow: 0 0 12px rgba(255, 0, 60, 0.2);
+}
+
+.input-group.invalid .input-icon {
+  color: var(--accent-secondary);
+}
+
+.field-error {
+  display: block;
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--accent-secondary);
+  margin-top: -12px;
+  margin-bottom: 4px;
+  margin-left: 14px;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   #contact {
@@ -227,3 +247,4 @@
     font-size: 1rem;
   }
 }
+
